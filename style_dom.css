@@ -1,0 +1,65 @@
+body{
+    background-color: #ddd;
+}
+.article img {
+    width: 250px;
+}
+.container{
+    display: flex;
+}
+.article{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    margin-left: 67px;
+    padding-top: 60px;
+
+} 
+.article p
+{
+    font-size: 2.6em;
+}
+
+/*
+.panier
+{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    margin-left: 67px;
+    padding-top: 20px;
+    top: 0;
+    position: sticky;
+    
+    width: 90%;
+    background-color: rgb(114, 101, 184);
+}
+*/
+
+.border_prix
+
+{
+    border: 3px blue dashed;
+
+}
+.panier {
+    width: 70%;
+    display: inline-block;
+    background-color: #fff;
+}
+
+.totla-panier {
+    display: flex;
+    font-size: 30px;
+    justify-content: space-between;
+    width: 300px;
+    background-color: #fff;
+    margin: 0 25px;
+    padding: 15px;
+    height: 300px;
+}
+
+.delete-product img{
+    width: 50px;
+}

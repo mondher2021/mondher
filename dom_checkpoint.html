@@ -1,0 +1,139 @@
+<html>
+
+<head>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet</title>
+    
+    <link rel="stylesheet" href="style_dom.css" />
+
+  </head>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="panier">
+      <div id="article1" class="article">
+        <img src="images/article1.jpg" alt="article1">
+        <div class="product-details">
+          <h2 class="product-title"> Chaussures Rouge </h2>
+          <p> 50 DT </p>
+          <input type="hidden" id="prix1" value="50" />
+        </div>
+
+        <button class="boutton_mode" onclick="incr_article1()">+</button>
+        <p id="nbre_article1">0</p>
+        <button class="boutton_mode" onclick="decr_article1()">-</button>
+
+        <p> total 1 : </p>
+        <p id="total1">0</p>
+        <div class="delete-product" onclick="deleteProduct('article1')"><img src="images/delete.png"></div>
+
+      
+      </div>
+
+
+
+
+
+      <div id="article2" class="article">
+        <img src="images/article2.jpg" alt="article2">
+        <div class="product-details">
+          <h2 class="product-title"> Chaussures Marron </h2>
+          <p> 60 DT </p>
+          <input type="hidden" id="prix2" value="60" />
+        </div>
+
+        <button class="boutton_mode" onclick="incr_article2()">+</button>
+        <p id="nbre_article2">0</p>
+        <button class="boutton_mode" onclick="decr_article2()">-</button>
+
+        <p> total 2 : </p>
+        <p id="total2">0</p>
+        <div class="delete-product" onclick="deleteProduct('article2')"><img src="images/delete.png"></div>
+
+
+      </div>
+
+
+   
+
+
+    </div>
+    <div class="totla-panier">
+      <p> Total  </p>
+      <p id="total">0</p>
+    </div>
+  </div>
+
+  <script>
+
+function 
+
+
+    function incr_article1() {
+      let nbre_article1 = document.getElementById('nbre_article1').innerHTML;
+      nbre_article1++;
+      document.getElementById('nbre_article1').innerHTML = nbre_article1;
+      let prix_article1 = document.getElementById('prix1').value;
+      let total1 = nbre_article1 * prix_article1;
+      document.getElementById('total1').innerHTML = total1;
+      total();
+    }
+
+    function decr_article1() {
+      let nbre_article1 = document.getElementById('nbre_article1').innerHTML;
+      nbre_article1--;
+      if (nbre_article1 >= 0) { // pour ne pas avoir un nombre négatif d'article
+        document.getElementById('nbre_article1').innerHTML = nbre_article1;
+        let prix_article1 = document.getElementById('prix1').value;
+        let total1 = nbre_article1 * prix_article1;
+        document.getElementById('total1').innerHTML = total1;
+        total();
+      }
+    }
+
+    function incr_article2() {
+      let nbre_article2 = document.getElementById('nbre_article2').innerHTML;
+      nbre_article2++;
+      document.getElementById('nbre_article2').innerHTML = nbre_article2;
+      let prix_article2 = document.getElementById('prix2').value;
+      let total2 = nbre_article2 * prix_article2;
+      document.getElementById('total2').innerHTML = total2;
+      total();
+    }
+
+    function decr_article2() {
+      let nbre_article2 = document.getElementById('nbre_article2').innerHTML;
+      nbre_article2--;
+      if (nbre_article2 >= 0) { // pour ne pas avoir un nombre négatif d'article
+        document.getElementById('nbre_article2').innerHTML = nbre_article2;
+        let prix_article2 = document.getElementById('prix2').value;
+        let total2 = nbre_article2 * prix_article2;
+        document.getElementById('total2').innerHTML = total2;
+        total();
+      }
+    }
+
+    function total() {
+      let total1 = document.getElementById('total1').innerHTML;
+      let total2 = document.getElementById('total2').innerHTML;
+      let total = parseInt(total1) + parseInt(
+        total2); // convertir en, entier , pour ne pas concaténer des chaines de caractères
+      document.getElementById('total').innerHTML = total;
+    }
+
+    function deleteProduct(articleID){
+      var article = document.getElementById(articleID);
+      article.remove();
+      
+      total();
+    }
+  </script>
+
+</body>
+
+</html>
